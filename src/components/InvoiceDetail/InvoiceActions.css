@@ -1,0 +1,31 @@
+.invoice-actions {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  transition: background var(--transition);
+}
+
+.invoice-actions__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: -0.1px;
+  margin-right: auto;
+}
+
+.invoice-actions__buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .invoice-actions__buttons { display: none; }
+}

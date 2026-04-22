@@ -1,0 +1,237 @@
+.invoice-info {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 48px;
+  transition: background 250ms ease;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.invoice-info__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.invoice-info__id {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.9px;
+}
+.invoice-info__id span { color: var(--clr-mid-blue); }
+
+.invoice-info__desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  margin-top: 4px;
+  letter-spacing: -0.1px;
+}
+
+.invoice-info__sender-addr {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-body);
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: -0.23px;
+  font-style: normal;
+}
+
+/* ── Meta grid ───────────────────────────────────────────────── */
+.invoice-info__meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.meta-col label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: -0.1px;
+  display: block;
+  margin-bottom: 13px;
+}
+
+.meta-group--mt { margin-top: 32px; }
+
+.meta-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.25px;
+}
+
+.meta-addr {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  margin-top: 4px;
+  font-style: normal;
+}
+
+.meta-email {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.25px;
+  word-break: break-all;
+}
+
+/* ── Items table ─────────────────────────────────────────────── */
+.items-table {
+  background: var(--bg-surface-alt);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: background 250ms ease;
+}
+
+/* Desktop table head */
+.items-table__head {
+  display: grid;
+  grid-template-columns: 1fr 80px 130px 130px;
+  padding: 32px 32px 12px;
+  gap: 16px;
+}
+.items-table__head span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: -0.1px;
+}
+.items-table__head .col-right { text-align: right; }
+
+.items-table__body { padding: 0 32px 32px; }
+
+/* Desktop row: Name | QTY | Price | Total */
+.items-table__row {
+  display: grid;
+  grid-template-columns: 1fr 80px 130px 130px;
+  gap: 16px;
+  padding: 8px 0;
+  align-items: center;
+}
+
+/* item info wrapper — name + mobile meta */
+.row-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.25px;
+}
+
+/* "1 x £156.00" — hidden on desktop, shown on mobile */
+.row-mobile-meta {
+  display: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-body);
+  letter-spacing: -0.1px;
+}
+
+.row-qty {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-body);
+  letter-spacing: -0.25px;
+  text-align: right;
+}
+.row-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-body);
+  letter-spacing: -0.25px;
+  text-align: right;
+}
+.row-total {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.25px;
+  text-align: right;
+}
+
+/* Total bar */
+.items-table__total {
+  background: var(--bg-total);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+.total-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #dfe3fa;
+  letter-spacing: -0.1px;
+}
+.total-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MOBILE / TABLET (≤ 900px)
+   Figma layout: Name + "qty x price" below | Total right-aligned
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .invoice-info { padding: 32px 24px; }
+  .invoice-info__header { flex-direction: column; gap: 32px; }
+  .invoice-info__sender-addr { text-align: left; }
+  .invoice-info__meta { grid-template-columns: 1fr 1fr; }
+
+  /* Hide desktop-only table header */
+  .items-table__head { display: none; }
+
+  /* Each row: Name+meta (left) | Total (right) */
+  .items-table__row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    gap: 0;
+    padding: 14px 0;
+    align-items: center;
+  }
+
+  /* Name + "qty x price" stacked on the left */
+  .row-item-info {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Show "2 x £200.00" mobile line */
+  .row-mobile-meta { display: block; }
+
+  /* Hide desktop qty and price columns */
+  .row-qty   { display: none; }
+  .row-price { display: none; }
+
+  /* Total on the right, vertically centred */
+  .row-total {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    align-self: center;
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .invoice-info { padding: 24px; }
+  .invoice-info__meta { grid-template-columns: 1fr; gap: 28px; }
+  .items-table__body  { padding: 0 24px 24px; }
+  .items-table__total { padding: 24px; }
+}

@@ -1,0 +1,161 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.25px;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, opacity 200ms ease;
+  white-space: nowrap;
+  padding: 17px 24px;
+  line-height: 1;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--clr-purple);
+  outline-offset: 2px;
+}
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Button 1: New Invoice — purple + white circle icon ─────────── */
+.btn--primary {
+  background: var(--clr-purple);
+  color: #fff;
+  padding: 8px 15px 8px 8px;
+  gap: 16px;
+}
+.btn--primary:hover:not(:disabled) {
+  background: var(--clr-purple-hover);
+}
+.btn--primary .btn__icon {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Button 2: Mark as Paid — purple ────────────────────────────── */
+.btn--mark-paid {
+  background: var(--clr-purple);
+  color: #fff;
+}
+.btn--mark-paid:hover:not(:disabled) {
+  background: var(--clr-purple-hover);
+}
+
+/* ── Button 3 Light: Edit ───────────────────────────────────────── */
+.btn--edit {
+  background: #F9FAFE;
+  color: var(--clr-mid-blue);
+}
+[data-theme="dark"] .btn--edit {
+  background: var(--bg-surface-alt);
+  color: #DFE3FA;
+}
+.btn--edit:hover:not(:disabled) {
+  background: var(--clr-mid-lavender);
+  color: var(--clr-mid-blue);
+}
+[data-theme="dark"] .btn--edit:hover:not(:disabled) {
+  background: #fff;
+  color: var(--clr-mid-blue);
+}
+
+/* ── Button 3 Dark: Edit (dark variant) ─────────────────────────── */
+/* handled above via [data-theme="dark"] */
+
+/* ── Button 4 Light: Save as Draft ─────────────────────────────── */
+.btn--draft {
+  background: #373B53;
+  color: #888EB0;
+}
+[data-theme="dark"] .btn--draft {
+  background: var(--bg-surface-alt);
+  color: #DFE3FA;
+}
+.btn--draft:hover:not(:disabled) {
+  background: #0C0E16;
+  color: #888EB0;
+}
+[data-theme="dark"] .btn--draft:hover:not(:disabled) {
+  background: #0C0E16;
+  color: #DFE3FA;
+}
+
+/* ── Button 5: Delete — red ─────────────────────────────────────── */
+.btn--danger {
+  background: var(--clr-red);
+  color: #fff;
+}
+.btn--danger:hover:not(:disabled) {
+  background: var(--clr-red-hover);
+}
+
+/* ── Button 6: Add New Item — ghost dashed ──────────────────────── */
+.btn--add-item {
+  background: var(--clr-mid-lavender);
+  color: var(--clr-mid-blue);
+  width: 100%;
+  padding: 18px;
+  border-radius: var(--radius-pill);
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+[data-theme="dark"] .btn--add-item {
+  background: var(--bg-surface-alt);
+  color: #DFE3FA;
+}
+.btn--add-item:hover:not(:disabled) {
+  background: var(--clr-mid-lavender);
+  color: var(--clr-purple);
+}
+[data-theme="dark"] .btn--add-item:hover:not(:disabled) {
+  background: var(--bg-total);
+  color: #DFE3FA;
+}
+
+/* ── Secondary — lavender/light grey ───────────────────────────── */
+.btn--secondary {
+  background: var(--clr-mid-lavender);
+  color: var(--clr-mid-blue);
+}
+[data-theme="dark"] .btn--secondary {
+  background: var(--bg-surface-alt);
+  color: #DFE3FA;
+}
+.btn--secondary:hover:not(:disabled) {
+  background: #DFE3FA;
+  color: var(--clr-mid-blue);
+}
+[data-theme="dark"] .btn--secondary:hover:not(:disabled) {
+  background: #fff;
+  color: var(--clr-mid-blue);
+}
+
+/* ── Ghost — transparent (Discard) ─────────────────────────────── */
+.btn--ghost {
+  background: transparent;
+  color: #888EB0;
+  padding: 17px 0;
+}
+.btn--ghost:hover:not(:disabled) {
+  color: var(--text-h);
+}
+
+/* ── Send / Save & Send ─────────────────────────────────────────── */
+.btn--send {
+  background: var(--clr-purple);
+  color: #fff;
+}
+.btn--send:hover:not(:disabled) {
+  background: var(--clr-purple-hover);
+}

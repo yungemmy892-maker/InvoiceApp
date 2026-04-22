@@ -1,0 +1,119 @@
+.invoice-list-item {
+  width: 100%;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-card);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 120px 1fr 160px 130px 140px 16px;
+  align-items: center;
+  gap: 0 20px;
+  cursor: pointer;
+  transition: border-color 200ms ease, background 200ms ease;
+  text-align: left;
+}
+.invoice-list-item:hover { border-color: var(--clr-purple); }
+.invoice-list-item:focus-visible { outline: 2px solid var(--clr-purple); outline-offset: 2px; }
+
+.invoice-list-item__id {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.25px;
+}
+.invoice-list-item__id span { color: var(--clr-mid-blue); }
+
+.invoice-list-item__due {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: -0.1px;
+}
+
+.invoice-list-item__client {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  letter-spacing: -0.1px;
+  text-align: right;
+}
+
+.invoice-list-item__amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.9px;
+  text-align: right;
+}
+
+.invoice-list-item__status { justify-self: end; }
+
+.invoice-list-item__arrow {
+  color: #7C5DFA;
+  justify-self: end;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MOBILE LAYOUT — exact Figma:
+   Row 1: #ID (left)        | Client name (right)
+   Row 2: Due date (left)   |
+   Row 3: £ Amount (left)   | Status badge (right, bottom-aligned)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .invoice-list-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 0;
+    padding: 24px;
+    align-items: start;
+  }
+
+  /* Row 1 col 1 — #ID */
+  .invoice-list-item__id {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 8px;
+  }
+
+  /* Row 1 col 2 — Client name */
+  .invoice-list-item__client {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    font-size: 13px;
+  }
+
+  /* Row 2 col 1 — Due date */
+  .invoice-list-item__due {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 16px;
+  }
+
+  /* Row 3 col 1 — Amount (below date, NOT beside status) */
+  .invoice-list-item__amount {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    align-self: center;
+  }
+
+  /* Rows 2–3 col 2 — Status badge (right side, bottom of card) */
+  .invoice-list-item__status {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    justify-self: end;
+    align-self: end;
+    padding-bottom: 2px;
+  }
+
+  /* Arrow hidden on mobile */
+  .invoice-list-item__arrow { display: none; }
+}

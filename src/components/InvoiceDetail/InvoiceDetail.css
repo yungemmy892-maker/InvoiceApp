@@ -1,0 +1,68 @@
+.detail-page {
+  animation: fadeIn 0.25s ease;
+  width: 100%;
+}
+
+/* ── Go back ─────────────────────────────────────────────────── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 23px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.25px;
+  margin-bottom: 32px;
+  transition: color 200ms ease;
+  padding: 0;
+}
+.back-link:hover { color: var(--clr-mid-grey); }
+.back-link:focus-visible { outline: 2px solid var(--clr-purple); outline-offset: 4px; }
+
+/* ── Mobile footer — hidden by default ───────────────────────── */
+.detail-footer { display: none; }
+
+.detail-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 0;
+  font-size: 15px;
+  color: var(--text-body);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Show action footer pinned at bottom of viewport */
+  .detail-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: var(--bg-surface);
+    padding: 16px 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+    transition: background 250ms ease;
+  }
+
+  /* Give page enough bottom padding so content isn't hidden by footer */
+  .detail-page {
+    padding-bottom: 80px;
+  }
+
+  /* Hide desktop action buttons on mobile — detail footer takes over */
+  .invoice-actions__buttons {
+    display: none;
+  }
+}

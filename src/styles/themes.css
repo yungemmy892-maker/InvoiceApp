@@ -1,0 +1,117 @@
+/* ── Light Theme (default) ────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-page:          #F8F8FB;
+  --bg-surface:       #FFFFFF;
+  --bg-surface-alt:   #F9FAFE;
+  --bg-input:         #FFFFFF;
+  --bg-total:         #373B53;
+  --bg-sidebar:       #373B53;
+
+  --border-color:     #DFE3FA;
+  --input-border:     #DFE3FA;
+
+  --text-h:           #0C0E16;
+  --text-body:        #888EB0;
+  --text-muted:       #7E88C3;
+  --text-input:       #0C0E16;
+  --text-total:       #FFFFFF;
+
+  --shadow-card:      0 10px 20px rgba(72,84,159,0.10);
+  --shadow-dropdown:  0 10px 20px rgba(72,84,159,0.25);
+  --overlay-bg:       rgba(0,0,0,0.50);
+
+  --status-paid-bg:       rgba(51,214,159,0.06);
+  --status-paid-color:    #33D69F;
+  --status-pending-bg:    rgba(255,143,0,0.06);
+  --status-pending-color: #FF8F00;
+  --status-draft-bg:      rgba(55,59,83,0.06);
+  --status-draft-color:   #373B53;
+}
+
+/* ── Dark Theme ───────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-page:          #141625;
+  --bg-surface:       #1E2139;
+  --bg-surface-alt:   #252945;
+  --bg-input:         #1E2139;
+  --bg-total:         #0C0E16;
+  --bg-sidebar:       #1E2139;
+
+  --border-color:     #252945;
+  --input-border:     #252945;
+
+  --text-h:           #FFFFFF;
+  --text-body:        #DFE3FA;
+  --text-muted:       #888EB0;
+  --text-input:       #FFFFFF;
+  --text-total:       #FFFFFF;
+
+  --shadow-card:      0 10px 20px rgba(0,0,0,0.25);
+  --shadow-dropdown:  0 10px 20px rgba(0,0,0,0.40);
+  --overlay-bg:       rgba(0,0,0,0.70);
+
+  --status-paid-bg:       rgba(51,214,159,0.06);
+  --status-paid-color:    #33D69F;
+  --status-pending-bg:    rgba(255,143,0,0.06);
+  --status-pending-color: #FF8F00;
+  --status-draft-bg:      rgba(223,227,250,0.06);
+  --status-draft-color:   #DFE3FA;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   DARK MODE — Explicit overrides for every surface
+   ════════════════════════════════════════════════════════════════ */
+
+/* Page background */
+[data-theme="dark"] body { background: #141625; }
+
+/* Cards / surfaces */
+[data-theme="dark"] .invoice-list-item  { background: #1E2139; }
+[data-theme="dark"] .invoice-list-item:hover { border-color: var(--clr-purple); }
+[data-theme="dark"] .invoice-actions    { background: #1E2139; }
+[data-theme="dark"] .invoice-info       { background: #1E2139; }
+[data-theme="dark"] .items-table        { background: #252945; }
+[data-theme="dark"] .modal-box          { background: #1E2139; }
+
+/* Form panel */
+[data-theme="dark"] .form-panel         { background: #141625; }
+[data-theme="dark"] .form-footer        { background: #141625; box-shadow: 0 -4px 20px rgba(0,0,0,0.4); }
+
+/* Inputs & selects */
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select {
+  background: #1E2139;
+  border-color: #252945;
+  color: #FFFFFF;
+}
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus { border-color: var(--clr-purple); }
+
+/* ── Dark calendar (date input) ───────────────────────────────── */
+[data-theme="dark"] input[type="date"] {
+  background: #1E2139;
+  color: #FFFFFF;
+  border-color: #252945;
+  color-scheme: dark;           /* tells browser to use dark-mode calendar picker */
+}
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.5);  /* make calendar icon white */
+  cursor: pointer;
+  opacity: 0.7;
+}
+[data-theme="dark"] input[type="date"]::-webkit-datetime-edit { color: #FFFFFF; }
+[data-theme="dark"] input[type="date"]::-webkit-datetime-edit-fields-wrapper { color: #FFFFFF; }
+[data-theme="dark"] input[type="date"]::-webkit-datetime-edit-text { color: #888EB0; }
+[data-theme="dark"] input[type="date"]::-webkit-datetime-edit-month-field,
+[data-theme="dark"] input[type="date"]::-webkit-datetime-edit-day-field,
+[data-theme="dark"] input[type="date"]::-webkit-datetime-edit-year-field { color: #FFFFFF; }
+
+/* Dropdown filter */
+[data-theme="dark"] .filter-dropdown   { background: #252945; }
+
+/* Detail footer (mobile) */
+[data-theme="dark"] .detail-footer     { background: #1E2139; }
+
+/* Scrollbar in dark */
+[data-theme="dark"] ::-webkit-scrollbar { background: #1E2139; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #252945; border-radius: 4px; }

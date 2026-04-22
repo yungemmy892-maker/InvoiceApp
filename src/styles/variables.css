@@ -1,0 +1,31 @@
+/* ── CSS Variables ─────────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --clr-purple:       #7C5DFA;
+  --clr-purple-hover: #9277FF;
+
+  /* Dark Backgrounds */
+  --clr-dark-navy:    #1E2139;
+  --clr-dark-card:    #252945;
+  --clr-darkest:      #0C0E16;
+
+  /* Mid */
+  --clr-mid-lavender: #DFE3FA;
+  --clr-mid-grey:     #888EB0;
+  --clr-mid-blue:     #7E88C3;
+
+  /* Semantic */
+  --clr-red:          #EC5757;
+  --clr-red-hover:    #FF9797;
+  --clr-green:        #33D69F;
+  --clr-orange:       #FF8F00;
+
+  /* Transitions */
+  --transition: 200ms ease;
+
+  /* Radii */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   20px;
+  --radius-pill: 24px;
+}

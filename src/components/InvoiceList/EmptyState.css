@@ -1,0 +1,38 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 42px;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.empty-state__illustration {
+  width: 242px;
+  height: auto;
+}
+
+.empty-state__text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: -0.75px;
+  margin-bottom: 24px;
+}
+
+.empty-state__text p {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-body);
+  line-height: 22px;
+  letter-spacing: -0.1px;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.empty-state__text p strong {
+  color: var(--text-h);
+  font-weight: 700;
+}
